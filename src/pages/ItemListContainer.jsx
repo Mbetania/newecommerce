@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import ItemList from './ItemList'
 import { db } from '../firebase'
-import { collection, getDocs, query } from 'firebase/firestore'
+import { collection, getDocs, query, } from 'firebase/firestore'
 
 //getDocs, getDoc, collection, updateDoc, addDoc, query, where
 
@@ -37,7 +37,7 @@ const ItemListContainer = () => {
 
     }, [])
     if (loading){
-        return <h1>cargando</h1>
+        return <h2>cargando</h2>
     } else{
         return <ItemList isLoading={loading} productos={items}/>
     }
