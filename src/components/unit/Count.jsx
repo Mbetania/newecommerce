@@ -3,6 +3,7 @@ import { useState } from 'react'
 
 const Count = ({miProp}) => {
     const [count, setCount] = useState(0)
+    const value  = 2
     const handlerClick = (value) => {
         switch (value) {
             case "plus":
@@ -12,14 +13,15 @@ const Count = ({miProp}) => {
                 return (count - value)
                 break;
         }
-        // setCount(count + value)
+        setCount(count)
         
     }
 return (
     <>
         <div>{miProp}</div>
-        <h1>{numero}</h1>
+        {/* <h1>{numero}</h1> */}
         <button onClick={() => handlerClick(+1)}> Click </button>
+        <button onClick={() => handlerClick(-1)}> Click </button>
     </>
 )
 }
