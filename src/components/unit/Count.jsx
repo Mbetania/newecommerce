@@ -15,7 +15,7 @@ const Count = () => {
         try {
             setVal(eval(val))
         } catch (error) {
-            setVal('error')
+            setVal('err')
         }
     }
 
