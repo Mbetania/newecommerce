@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavBar } from '../components/shop/NavBar'
-import Count from '../components/unit/Count'
+import Count from '../components/unit/Calculator'
 import ItemListContainer from './ItemListContainer'
 
 
@@ -9,7 +9,7 @@ return (
     <>
         <NavBar/>
         <ItemListContainer/>
-        <Count/>
+
     </>
 )
 }

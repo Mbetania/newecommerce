@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 
-const Count = () => {
+const Calculator = () => {
     const [val, setVal] = useState('')
 
     const backspace = () => {
@@ -170,4 +170,4 @@ const Count = () => {
 // )
 // }
 
-export default Count
+export default Calculator
