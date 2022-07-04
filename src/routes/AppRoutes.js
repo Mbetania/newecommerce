@@ -3,6 +3,7 @@ import {BrowserRouter, Routes,Route} from 'react-router-dom'
 import { NavBar } from '../components/shop/NavBar';
 import ItemDetailContainer from '../pages/detail/ItemDetailContainer';
 import { Shop }  from '../pages/Shop';
+import '../app.scss'
 
 export const AppRoutes = () => {
 return (
