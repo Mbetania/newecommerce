@@ -32,7 +32,7 @@ const ItemDetailContainer = () => {
     },[])
 
     return(
-        <div>
+        <div className='d-flex justify-content-evenly '>
             <ItemDet array={characterList}/>
         </div>
     )

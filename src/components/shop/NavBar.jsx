@@ -6,11 +6,11 @@ export const NavBar = () => {
 return (
     <>
         <BsCart2/>
-        <ul>
-            <NavLink to='/'>inicio</NavLink>
-            <Link to='/shop'>section 1</Link>
-            <Link to='/producto'>section 2</Link>
-            <Link to='/section/3'>section 3</Link>
+        <ul className="nav nav-tabs">
+            <Link class="nav-item nav-link active" to='/'>inicio</Link>
+            <Link class="nav-item nav-link active" to='/shop'>section 1</Link>
+            <Link class="nav-item nav-link active" to='/producto'>section 2</Link>
+            <Link class="nav-item nav-link active" to='/section/3'>section 3</Link>
         </ul>
         <Outlet/>
     </>
