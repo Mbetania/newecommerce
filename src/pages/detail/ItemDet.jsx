@@ -1,4 +1,5 @@
 import React from 'react'
+import Count from '../../components/unit/Count'
 
 const ItemDet = ({array}) => {
 return (
@@ -7,8 +8,11 @@ return (
             return (
                 <>
                 <h2>{item?.name}</h2>
-                <img src="https://picsum.photos/300/150"  />
+                <p>{item?.species}</p>
+                <span>{item?.origin.name}</span>
+                <img src={item?.image}  />
                 {/* <p>{product?.precio}</p> */}
+                <Count stock={5} initial={1}/>
                 </>
             )
         })}
