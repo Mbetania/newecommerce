@@ -2,6 +2,8 @@ import React from 'react'
 import {getData} from '../mocks/productos'
 import { useEffect, useState } from 'react'
 import ItemList from './ItemList'
+import { toast } from 'react-toastify'
+import { useParams } from 'react-router'
 // import { db } from '../firebase'
 // import { collection, getDocs, query } from 'firebase/firestore'
 
@@ -11,12 +13,17 @@ const ItemListContainer = () => {
     const [loading, setLoading] = useState(true)
     const [items, setItems] = useState([])
 
+    const {idSection} = useParams()
+    console.log(idSection)
+
 
     useEffect(() => {
-        console.log('me veo')
+        // console.log('me veo')
+        toast.info('cargando cuadros')
         getData
-            .then((result) => {setItems(result)})
-            .catch((error) =>console.log(error))
+            .then((result) => {toast.dismiss()
+                setItems(result)})
+            .catch((error) =>toast.error('Error al traer cuadros'))
             .finally(()=> setLoading(false))
         // const itemsCollection = collection(db,"items")
         // const consulta = getDocs(itemsCollection)
@@ -39,7 +46,7 @@ const ItemListContainer = () => {
             //     console.error('error al cargar');
             // })    
 
-    } , [])
+    } , [idSection])
 
     return(
         <>
