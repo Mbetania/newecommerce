@@ -2,10 +2,15 @@ import React from 'react'
 import {getData} from '../mocks/productos'
 import { useEffect, useState } from 'react'
 import ItemList from './ItemList'
+<<<<<<< HEAD
 import { toast } from 'react-toastify'
 import { useParams } from 'react-router'
 // import { db } from '../firebase'
 // import { collection, getDocs, query } from 'firebase/firestore'
+=======
+import { db } from '../firebase'
+import { collection, getDocs, query, } from 'firebase/firestore'
+>>>>>>> calculator
 
 //getDocs, getDoc, collection, updateDoc, addDoc, query, where
 
@@ -48,6 +53,7 @@ const ItemListContainer = () => {
 
     } , [idSection])
 
+<<<<<<< HEAD
     return(
         <>
         <h2>Hola!</h2>
@@ -63,6 +69,20 @@ const ItemListContainer = () => {
     // } else{
     //     return <ItemList isLoading={loading} productos={items}/>
     // }
+=======
+            })
+            .catch(()=>{
+                console.error('error al cargar');
+            })
+            
+
+    }, [])
+    if (loading){
+        return <h2>cargando</h2>
+    } else{
+        return <ItemList isLoading={loading} productos={items}/>
+    }
+>>>>>>> calculator
 
 }
 export default ItemListContainer

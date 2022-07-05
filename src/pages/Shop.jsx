@@ -1,4 +1,5 @@
 import React from 'react'
+<<<<<<< HEAD
 import Count from '../components/unit/Count'
 import ItemListContainer from './ItemListContainer'
 
@@ -11,4 +12,19 @@ export const Shop = ({ onAdd }) => {
 
         </>
     )
+=======
+import { NavBar } from '../components/shop/NavBar'
+import Count from '../components/unit/Calculator'
+import ItemListContainer from './ItemListContainer'
+
+
+export const Shop = () => {
+return (
+    <>
+        <NavBar/>
+        <ItemListContainer/>
+
+    </>
+)
+>>>>>>> calculator
 }
