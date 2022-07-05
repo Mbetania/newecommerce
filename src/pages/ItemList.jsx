@@ -7,7 +7,7 @@ const ItemList = ({ items, isLoading }) => {
         <section>
             {/* {isLoading &&  */}
             <>
-                {items?.map((item) => {
+                {items.map((item) => {
                     return <Item key={item.id} item={item} />
                 })}
             </>
