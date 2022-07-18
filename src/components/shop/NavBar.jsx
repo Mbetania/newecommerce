@@ -7,10 +7,10 @@ return (
     <>
         <BsCart2/>
         <ul className="nav nav-tabs">
-            <Link class="nav-item nav-link active" to='/'>inicio</Link>
-            <Link class="nav-item nav-link active" to='/shop'>calculadora</Link>
-            <Link class="nav-item nav-link active" to='/producto'>rick and morty</Link>
-            <Link class="nav-item nav-link active" to='/category'>random cards</Link>
+            <Link className="nav-item nav-link active" to='/'>inicio</Link>
+            <Link className="nav-item nav-link active" to='/shop'>calculadora</Link>
+            <Link className="nav-item nav-link active" to='/producto'>rick and morty</Link>
+            <Link className="nav-item nav-link active" to='/category'>random cards</Link>
         </ul>
         <Outlet/>
     </>

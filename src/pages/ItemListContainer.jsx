@@ -1,11 +1,11 @@
 import React from 'react'
-import {getData} from '../mocks/productos'
+import {getData, products} from '../mocks/productos'
 import { useEffect, useState } from 'react'
 import ItemList from './ItemList'
 import { toast } from 'react-toastify'
 import { useParams } from 'react-router'
-// import { db } from '../firebase'
-// import { collection, getDocs, query } from 'firebase/firestore'
+import { db } from '../firebase'
+import { collection, getDocs, query } from 'firebase/firestore'
 
 //getDocs, getDoc, collection, updateDoc, addDoc, query, where
 
@@ -15,6 +15,29 @@ const ItemListContainer = () => {
 
     const {idSection} = useParams()
     console.log(idSection)
+
+    //useEffet(() => {
+    //const productCollection = collection(db, 'items') nombre igual al que le dimos a la coleccion
+    //const q = query(productCollection), where('category', '==', 'nombre de la categoria')
+    //haciendo la linea 21 reemplazamo en getDocs(q) y traemos filtrada la categoria
+    //getDocs(productCollection)
+    //.then(result => {
+        //const lista = result.docs.map(item =>{
+            //return {id: product.id,
+        //...products.data()}
+        // })
+        //!seguir con la promesa
+        //setProducts(lista)
+    // })
+
+
+        // const url = categoryID
+        // ? `links/products/category/${categoryId}`
+        // : `link/products`
+        //fetch(URL)//
+    // })
+
+
 
 
     useEffect(() => {

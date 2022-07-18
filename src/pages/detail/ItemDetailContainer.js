@@ -7,6 +7,8 @@ import { consumeApi } from '../../services/shared/rest.service'
 // import { getData } from '../../mocks/productos'
 // import { consumeApi } from '../../services/shared/rest.service'
 import ItemDet from './ItemDet'
+//import { db } from '../firebase'
+//import { collection, getDocs, query } from 'firebase/firestore'
 
 const ItemDetailContainer = () => {
     const [characterList, setCharactersList]= useState([])
@@ -28,6 +30,13 @@ const ItemDetailContainer = () => {
     }
 
     useEffect(() => {
+        //const productCollection = collection(db, 'items')
+        // const refDoc = doc(producCollection, productId)
+        //getDoc(refDoc).then(result => {
+            //setProduct(result.data())
+            //!seguir la promesa
+        // }) 
+
             getCharacter()
     },[])
 
