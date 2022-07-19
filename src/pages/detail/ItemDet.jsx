@@ -2,6 +2,9 @@ import React from 'react'
 import Count from '../../components/unit/Count'
 
 const ItemDet = ({array}) => {
+    // fetch(url,{
+    //     method
+    // })
 return (
     <div className='d-flex justify-content-sm-center flex-wrap p-2 flex-fill bd-highlight'>
         {array.map((item)=>{
@@ -17,6 +20,7 @@ return (
                     </div>
                 {/* <span>{item?.origin.name}</span> */}
                 {/* <p>{product?.precio}</p> */}
+
                 </div>
 
             )

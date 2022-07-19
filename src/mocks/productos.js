@@ -1,50 +1,44 @@
 export const products = [
     {
-      id: 1,
-      nombre: "Cuadro 1",
-      img: "https://picsum.photos/id/0/600",
+      id: 7,
+      nombre: "Cuadro #1",
+      img: "https://i.postimg.cc/vBZK80qR/cuadro1.png",
       precio: 1500,
       stock: 5,
+      categoria: "Cuadros",
+      descripcion:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     },
     {
-      id: 2,
-      nombre: "Cuadro 2",
-      img: "https://picsum.photos/id/10/600",
+      id: 8,
+      nombre: "Cuadro #2",
+      img: "https://i.postimg.cc/x1YVD32Q/cuadro2.png",
       precio: 1300,
       stock: 8,
+      categoria: "Cuadros",
+      descripcion:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     },
     {
-      id: 3,
-      nombre: "Cuadro 3",
-      img: "https://picsum.photos/id/20/600",
+      id: 9,
+      nombre: "Cuadro #3",
+      img: "https://i.postimg.cc/zDRsycD5/cuadro3.png",
       precio: 1100,
       stock: 10,
-    },
-    {
-      id: 4,
-      nombre: "Cuadro 4",
-      img: "https://picsum.photos/id/30/600",
-      precio: 1050,
-      stock: 2,
-    },
-    {
-      id: 5,
-      nombre: "Cuadro 5",
-      img: "https://picsum.photos/id/40/600",
-      precio: 1010,
-      stock: 1,
-    },
-    {
-      id: 6,
-      nombre: "Cuadro 6",
-      img: "https://picsum.photos/id/50/600",
-      precio: 1150,
-      stock: 7,
+      categoria: "Cuadros",
+      descripcion:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     },
   ];
-  export const getData = new Promise((resolve, reject) =>{
+  export const getData = (categoryId) =>{
+    return new Promise((resolve, reject) =>{
+      const cuadroFiltrado = products.filter(
+        (cuadro) => cuadro.categoria === categoryId)
       setTimeout(() =>{
-          resolve (products)  
+        categoryId
+      ?resolve(cuadroFiltrado)
+      :resolve(products)
       },1500)
     })
-  
+  }
+      

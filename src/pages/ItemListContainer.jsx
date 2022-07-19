@@ -10,11 +10,11 @@ import { collection, getDocs, query } from 'firebase/firestore'
 //getDocs, getDoc, collection, updateDoc, addDoc, query, where
 
 const ItemListContainer = () => {
-    const [loading, setLoading] = useState(true)
     const [items, setItems] = useState([])
+    const [loading, setLoading] = useState(true)
 
-    const {idSection} = useParams()
-    console.log(idSection)
+    const {categoryId} = useParams()
+    console.log(categoryId)
 
     //useEffet(() => {
     //const productCollection = collection(db, 'items') nombre igual al que le dimos a la coleccion
@@ -30,23 +30,21 @@ const ItemListContainer = () => {
         //setProducts(lista)
     // })
 
-
         // const url = categoryID
         // ? `links/products/category/${categoryId}`
         // : `link/products`
         //fetch(URL)//
     // })
 
-
-
-
     useEffect(() => {
         // console.log('me veo')
+        setLoading(true)
         toast.info('cargando cuadros')
-        getData
+        getData(categoryId)
             .then((result) => {toast.dismiss()
+                console.log(result)
                 setItems(result)})
-            .catch((error) =>toast.error('Error al traer cuadros'))
+            .catch((error) =>console.error('Error al traer cuadros'))
             .finally(()=> setLoading(false))
         // const itemsCollection = collection(db,"items")
         // const consulta = getDocs(itemsCollection)
@@ -69,7 +67,7 @@ const ItemListContainer = () => {
             //     console.error('error al cargar');
             // })    
 
-    } , [idSection])
+    } , [categoryId])
 
     return(
         <>
