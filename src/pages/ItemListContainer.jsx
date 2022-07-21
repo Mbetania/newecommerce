@@ -6,7 +6,7 @@ import { toast } from 'react-toastify'
 import { useParams } from 'react-router'
 import { db } from '../firebase'
 import { collection, getDocs, query } from 'firebase/firestore'
-
+// console.log(db)
 //getDocs, getDoc, collection, updateDoc, addDoc, query, where
 
 const ItemListContainer = () => {
@@ -14,18 +14,23 @@ const ItemListContainer = () => {
     const [loading, setLoading] = useState(true)
 
     const {categoryId} = useParams()
-    console.log(categoryId)
+    // console.log(categoryId)
 
-    //useEffet(() => {
-    //const productCollection = collection(db, 'items') nombre igual al que le dimos a la coleccion
+    useEffect(() => {
+        // nombre igual al que le dimos a la coleccion
+        const productCollection = collection(db, 'items') 
+        // console.log(productCollection)
+        const consulta =getDocs(productCollection)
+        consulta
+        .then((res) =>{
+            res.docs.forEach((doc) =>{
+            console.log(doc.data())
+        })
+            })
+        //     console.log(lista)
+        // })
     //const q = query(productCollection), where('category', '==', 'nombre de la categoria')
     //haciendo la linea 21 reemplazamo en getDocs(q) y traemos filtrada la categoria
-    //getDocs(productCollection)
-    //.then(result => {
-        //const lista = result.docs.map(item =>{
-            //return {id: product.id,
-        //...products.data()}
-        // })
         //!seguir con la promesa
         //setProducts(lista)
     // })
@@ -36,16 +41,16 @@ const ItemListContainer = () => {
         //fetch(URL)//
     // })
 
-    useEffect(() => {
+    // useEffect(() => {
         // console.log('me veo')
-        setLoading(true)
-        toast.info('cargando cuadros')
-        getData(categoryId)
-            .then((result) => {toast.dismiss()
-                console.log(result)
-                setItems(result)})
-            .catch((error) =>console.error('Error al traer cuadros'))
-            .finally(()=> setLoading(false))
+        // setLoading(true)
+        // toast.info('cargando cuadros')
+        // getData(categoryId)
+        //     .then((result) => {toast.dismiss()
+        //         console.log(result)
+        //         setItems(result)})
+        //     .catch((error) =>console.error('Error al traer cuadros'))
+        //     .finally(()=> setLoading(false))
         // const itemsCollection = collection(db,"items")
         // const consulta = getDocs(itemsCollection)
         // const consulta = getDocs(query())

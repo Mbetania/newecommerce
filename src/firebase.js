@@ -9,7 +9,7 @@ const firebaseConfig = {
     storageBucket: "ecommerce-test-9d000.appspot.com",
     messagingSenderId: "39302780001",
     appId: "1:39302780001:web:ef5459a8f0adec31810620"
-    };
+  };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
