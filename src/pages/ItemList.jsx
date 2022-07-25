@@ -4,6 +4,7 @@ import Item from './Item'
 
 const ItemList = ({ items, isLoading }) => {
     useEffect(() => {
+        const {image, price} = items
         console.log(items)
     }, [])
     
@@ -13,7 +14,7 @@ const ItemList = ({ items, isLoading }) => {
             <>
             <h3>parados por aca</h3>
                 {items.map((item) => {
-                    return <Item key={item.id} item={item} />
+                    return <Item key={item.id} item={item.image} />
                 })}
             </>
         </section>
