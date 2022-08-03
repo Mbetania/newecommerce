@@ -5,15 +5,15 @@ import { Link } from 'react-router-dom'
 const Item = ({ item }) => {
 
     useEffect(() => {
-      console.log('olas')
+    //   console.log('olas')
     }, [])
     
     return (
         <article >
             
-            {/* <h2>{item.nombre}</h2> */}
-            <img src="https://picsum.photos/200/150"  />
-            {/* <p>Precio: ${item.id}</p> */}
+            <h2>{item.title}</h2>
+            <img src={item.image}  />
+            <p>Precio: ${item.price}</p>
             {/* <Link to={`/category/${item.id}`}>Ver detalle</Link> */}
         </article>
 

@@ -16,7 +16,7 @@ const Count = ({miProp, stock, initial, onAdd}) => {
 return (
     <>
         <div>{miProp}</div>
-        {/* <h1>{numero}</h1> */}
+        <h1>{count}</h1>
         <button onClick={handlerClickAdd}> + </button>
         <span>{count}</span>
         <button onClick={handlerClickSubtrack}> - </button>

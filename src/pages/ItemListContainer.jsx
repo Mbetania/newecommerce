@@ -1,15 +1,13 @@
 import React from 'react'
-import {getData, products} from '../mocks/productos'
 import { useEffect, useState } from 'react'
 import ItemList from './ItemList'
-import { toast } from 'react-toastify'
 import { useParams } from 'react-router'
 import { db } from '../firebase'
 import { collection, getDocs, query, where } from 'firebase/firestore'
 // console.log(db)
 //getDocs, getDoc, collection, updateDoc, addDoc, query, where
 
-const ItemListContainer = () => {
+const ItemListContainer = ({mensaje}) => {
     const [items, setItems] = useState([])
     const [loading, setLoading] = useState(true)
 
@@ -20,14 +18,14 @@ const ItemListContainer = () => {
     useEffect(() => {
         // nombre igual al que le dimos a la coleccion
         const productsCollection = collection(db, 'items') 
-        console.log(categoryId)
+        // console.log(categoryId)
         if(categoryId){
             const productsQuery = query(
                 productsCollection,
                 where('category', '==', categoryId)
             )
             producstConsult = productsQuery
-            console.log(producstConsult)
+            // console.log(producstConsult)
         }
 
         else{
@@ -42,7 +40,7 @@ const ItemListContainer = () => {
                 }
             })
             setItems(listProducts)
-            console.log(listProducts)
+            // console.log(listProducts)
             })
             .catch((error) =>{
                 console.log(error)
@@ -55,7 +53,7 @@ const ItemListContainer = () => {
 
     return(
         <>
-        <h2>Hola!</h2>
+        <h2>{mensaje}</h2>
         {loading?(
             <span>Loading...</span>
         ):(
