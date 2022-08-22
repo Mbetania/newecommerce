@@ -11,6 +11,7 @@ const ItemListContainer = ({mensaje}) => {
     const [items, setItems] = useState([])
     const [loading, setLoading] = useState(true)
 
+
     const {categoryId} = useParams()
     let producstConsult;
     // console.log(categoryId)

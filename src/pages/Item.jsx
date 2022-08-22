@@ -7,15 +7,21 @@ const Item = ({ item }) => {
     useEffect(() => {
     //   console.log('olas')
     }, [])
+
+    //!FALTA CONDICIONAL DE CANT=== 0 Y CANT !=0
     
     return (
-        <article >
-            
-            <h2>{item.title}</h2>
-            <img src={item.image}  />
-            <p>Precio: ${item.price}</p>
-            {/* <Link to={`/category/${item.id}`}>Ver detalle</Link> */}
-        </article>
+        <div className='d-flex flex-column' >
+            <div className='d-flex justify-content-between'>
+                <h2>{item.title}</h2>
+            </div>
+            <div className="mt-auto">
+                <img src={item.image}  />
+                <p>Precio: ${item.price}</p>
+                <p>{item.id}</p>
+                {/* <Link to={`/category/${item.id}`}>Ver detalle</Link> */}
+            </div>
+        </div>
 
     )
 }
