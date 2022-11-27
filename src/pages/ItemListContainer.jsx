@@ -8,16 +8,28 @@ import ItemList from './ItemList'
 //getDocs, getDoc, collection, updateDoc, addDoc, query, where
 
 const ItemListContainer = () => {
-    const [loading, setLoading] = useState(true)
+    // const [loading, setLoading] = useState(true)
     const [items, setItems] = useState([])
 
 
     useEffect(() => {
-        console.log('me veo')
-        getData
-            .then((result) => {setItems(result)})
-            .catch((error) =>console.log(error))
-            .finally(()=> setLoading(false))
+        const api = 'mocks/productos.json'
+
+        const fetchData = async() => {
+                try{
+                    const response = await fetch(api)
+                    const json = await response.json()
+                    setItems(json)
+                }catch(error){
+                    console.log('error')
+                }
+        }
+        fetchData()
+        // console.log('me veo')
+        // getData
+        //     .then((result) => {setItems(result)})
+        //     .catch((error) =>console.log(error))
+        //     .finally(()=> setLoading(false))
         // const itemsCollection = collection(db,"items")
         // const consulta = getDocs(itemsCollection)
         // const consulta = getDocs(query())
@@ -39,16 +51,16 @@ const ItemListContainer = () => {
             //     console.error('error al cargar');
             // })    
 
-    } , [])
+    } , [items])
 
     return(
         <>
         <h2>Hola!</h2>
-        {loading?(
+        <ItemList items={items}/>
+        {/* {loading?(
             <span>Loading...</span>
-        ):(
-            <ItemList items={items}/>
-            )}
+        ):( */}
+            {/* )} */}
         </>
     )
     // if (loading){
