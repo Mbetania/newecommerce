@@ -1,5 +1,5 @@
 import React from 'react'
-import {getData} from '../mocks/productos'
+import Data from '../mocks/productos'
 import { useEffect, useState } from 'react'
 import ItemList from './ItemList'
 // import { db } from '../firebase'
@@ -17,9 +17,11 @@ const ItemListContainer = () => {
 
         const fetchData = async() => {
                 try{
-                    const response = await fetch(api)
-                    const json = await response.json()
-                    setItems(json)
+                    // const response = await fetch(api)
+                    const response = Data
+                    // const json = await response.json()
+                    setItems(response)
+                    // setItems(json)
                 }catch(error){
                     console.log('error')
                 }
